@@ -57,6 +57,10 @@ public class NumberPlayList {
 		System.out.println("stream foreach   value: "+n);
 	});
 	
+	myList.stream()
+    .map(toDoubleFunction)
+    .forEach(System.out::println);;
+	
 	List<Double> doubleList = myList.stream()
 			                 .map(toDoubleFunction)
 			                 .collect(Collectors.toList());
