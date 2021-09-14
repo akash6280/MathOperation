@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
+import java.util.Comparator;
 
 public class NumberPlayList {
 	public static void main(String[] args) {
@@ -77,5 +77,17 @@ public class NumberPlayList {
 						 .findFirst()
 						 .orElse(null);
 		System.out.println("First even number: "+firstNumber);	
+		
+	Integer minimumNumber = myList.stream()
+							.filter(isEvenFunction)
+							.min((n1,n2) -> n1-n2).orElse(null);
+		System.out.println("Minimum number: "+minimumNumber);
+
+	Integer maximumNumber = myList.stream()
+							.filter(isEvenFunction)
+							.max(Comparator.comparing(Integer::intValue))
+							.orElse(null);
+	System.out.println("Maximum number: "+maximumNumber);	
+		
 	}
 }
