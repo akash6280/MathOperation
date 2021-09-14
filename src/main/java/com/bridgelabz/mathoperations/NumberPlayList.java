@@ -93,5 +93,9 @@ public class NumberPlayList {
 			 	  .reduce(0,Integer::sum);
 	long count = myList.stream().count();
 		System.out.println("Sum is "+sum+" Average is: "+(sum/count));
+		
+	boolean allEven = myList.stream().allMatch(isEvenFunction);
+	boolean oneEven = myList.stream().anyMatch(isEvenFunction);
+		System.out.println("all even: "+allEven+" ,one even: "+oneEven);	
 	}
 }
