@@ -48,7 +48,13 @@ public class NumberPlayList {
 	});
 	
 	Predicate<Integer> isEvenFunction = n->n>0 && n%2==0;
-	myList.forEach(n->{System.out.println("foreach lambda check even : "+isEvenFunction.test(n));});
+	myList.forEach(n->{
+		System.out.println("foreach lambda check even : "+isEvenFunction.test(n));
+	});
 	
+	myList.stream().forEach(n->{
+		System.out.println("stream foreach   value: "+n);
+	});
+
 	}
 }
