@@ -71,5 +71,11 @@ public class NumberPlayList {
 							.collect(Collectors.toList());
 		System.out.println("Even Double list: "+evenList);	
 	
+	Integer firstNumber = myList.stream()
+						 .filter(isEvenFunction)
+						 .peek(n -> System.out.println("peek even number: "+n))
+						 .findFirst()
+						 .orElse(null);
+		System.out.println("First even number: "+firstNumber);	
 	}
 }
