@@ -89,5 +89,9 @@ public class NumberPlayList {
 							.orElse(null);
 	System.out.println("Maximum number: "+maximumNumber);	
 		
+	Integer sum = myList.stream()
+			 	  .reduce(0,Integer::sum);
+	long count = myList.stream().count();
+		System.out.println("Sum is "+sum+" Average is: "+(sum/count));
 	}
 }
