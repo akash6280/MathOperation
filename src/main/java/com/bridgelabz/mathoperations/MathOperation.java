@@ -6,6 +6,9 @@ package com.bridgelabz.mathoperations;
 @FunctionalInterface
 interface IMathFunction {
     int calculate(int a, int b);
+    static void printResult(String operation, int a, int b, IMathFunction function) {
+		System.out.println(operation+" "+function.calculate(a, b));
+	}
 }
 
 public class MathOperation{
@@ -16,10 +19,10 @@ public class MathOperation{
         IMathFunction divide = (int a, int b) -> a / b;
         IMathFunction subtract = (int a, int b) -> a - b;
      
-        System.out.println("Addition " + add.calculate(1, 2));
-        System.out.println("Multiplication " + multiply.calculate(1, 2));
-        System.out.println("Division " + divide.calculate(1, 2));
-        System.out.println("Subtraction " + subtract.calculate(1, 2));
+        IMathFunction.printResult("Addition", 1, -2, add);
+		IMathFunction.printResult("Multiplication", 1, 2, multiply);
+		IMathFunction.printResult("Division", 1, 2, divide);
+		IMathFunction.printResult("Subtraction", 1, 2, subtract);
         
     }
 }
